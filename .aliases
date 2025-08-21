@@ -1,0 +1,11 @@
+alias ls='ls --color'
+alias update='\
+  zinit self-update && \
+  zinit update --all && \
+  zinit delete --clean && \
+  brew update && \
+  brew upgrade && \
+  brew cleanup
+'
+alias c='zed'
+alias p='pnpm'

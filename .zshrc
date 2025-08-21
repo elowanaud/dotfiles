@@ -23,20 +23,6 @@ zinit snippet OMZP::git-auto-fetch
 autoload -Uz compinit && compinit
 zinit ice atload"zpcdreplay" atclone"./zplug.zsh" atpull"%atclone"
 
-
-
-# Load OhMyPosh
-if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
-  eval "$(oh-my-posh init zsh --config $HOME/.config/oh-my-posh/config.toml)"
-fi
-
-# Load Node Version Manager
-eval "$(fnm env --use-on-cd --shell zsh)"
-eval "$(fnm completions --shell zsh)"
-
-# Load Ruby Version Manager
-eval "$(rbenv init - --no-rehash zsh)"
-
 # Configure Zsh autocompletion
 HISTSIZE=50000
 HISTFILE="$HOME/.zsh_history"
@@ -56,15 +42,17 @@ zstyle ':completion:*' list-colors '${(s.:.)LS_COLORS}'
 zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 
+# Load OhMyPosh
+if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
+  eval "$(oh-my-posh init zsh --config $HOME/.config/oh-my-posh/config.toml)"
+fi
+
+# Load Node Version Manager
+eval "$(fnm env --use-on-cd --shell zsh)"
+eval "$(fnm completions --shell zsh)"
+
+# Load Ruby Version Manager
+eval "$(rbenv init - --no-rehash zsh)"
+
 # Aliases
-alias ls='ls --color'
-alias update='\
-  zinit self-update && \
-  zinit update --all && \
-  zinit delete --clean && \
-  brew update && \
-  brew upgrade && \
-  brew cleanup
-'
-alias c='cursor'
-alias p='pnpm'
+source "$HOME/.aliases"
