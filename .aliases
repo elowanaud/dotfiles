@@ -7,5 +7,5 @@ alias update='\
   brew upgrade && \
   brew cleanup
 '
-alias c='zed'
+alias c='codium'
 alias p='pnpm'

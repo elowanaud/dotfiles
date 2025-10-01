@@ -1,10 +1,7 @@
 {
 	// UI
-	"theme": "Colorizer Pro",
-	"experimental.theme_overrides": {
-		"text.muted": "#f0f6fc"
-	},
-	"icon_theme": "Base Charmed Icons",
+	"theme": "GitHub Dark Classic",
+	"icon_theme": "Material Icon Theme",
 	"ui_font_family": ".SystemUIFont",
 	"ui_font_size": 15,
 	"ui_font_weight": 600,
@@ -15,7 +12,6 @@
 	"global_lsp_settings": { "button": false },
 	"outline_panel": { "button": false },
 	"collaboration_panel": { "button": false },
-	"chat_panel": { "button": "never" },
 	"git_panel": { "button": false },
 	"notification_panel": { "button": false },
 	"agent": { "button": false },
@@ -63,7 +59,7 @@
 	"preferred_line_length": 120, // Column to soft-wrap
 	"show_wrap_guides": false,
 	"features": {
-		"edit_prediction_provider": "none"
+		"edit_prediction_provider": "supermaven"
 	},
 	"autosave": {
 		"after_delay": {
@@ -105,7 +101,8 @@
 				"experimental": {
 					"classRegex": [
 						["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
-						["clsx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
+						["clsx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"],
+						["cn\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
 					]
 				}
 			}

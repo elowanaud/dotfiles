@@ -1,3 +1,5 @@
+XDG_CONFIG_HOME="${HOME}/.config}"
+
 # Setup Zinit (plugin manager)
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
@@ -56,3 +58,11 @@ eval "$(rbenv init - --no-rehash zsh)"
 
 # Aliases
 source "$HOME/.aliases"
+
+# pnpm
+export PNPM_HOME="/Users/eloitsme/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
